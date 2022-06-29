@@ -14,3 +14,17 @@ C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Academia-NET\Desa
 C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Academia-NET\Desafio_Avaliativos\Form_Bd\bin\Debug\System.Data.SqlClient.dll
 C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Academia-NET\Desafio_Avaliativos\Form_Bd\bin\Debug\System.Data.SqlClient.xml
 C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Academia-NET\Desafio_Avaliativos\Form_Bd\obj\Debug\Form_Bd.csproj.CopyComplete
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\obj\Debug\Form_Bd.csproj.AssemblyReference.cache
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\obj\Debug\Form_Bd.csproj.SuggestedBindingRedirects.cache
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\obj\Debug\Form_Bd.FormVendas.resources
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\obj\Debug\Form_Bd.Properties.Resources.resources
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\obj\Debug\Form_Bd.csproj.GenerateResource.cache
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\obj\Debug\Form_Bd.csproj.CoreCompileInputs.cache
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\obj\Debug\Form_Bd.exe
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\obj\Debug\Form_Bd.pdb
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\bin\Debug\Form_Bd.exe.config
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\bin\Debug\Form_Bd.exe
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\bin\Debug\Form_Bd.pdb
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\bin\Debug\System.Data.SqlClient.dll
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\bin\Debug\System.Data.SqlClient.xml
+C:\Users\mbrun\OneDrive\Área de Trabalho\2\obj\Debug\Form_Bd.csproj.CopyComplete

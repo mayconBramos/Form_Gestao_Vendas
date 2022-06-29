@@ -27,13 +27,19 @@ namespace Form_Bd
             this.valorTotal = valortotal;
         }
 
+
         public Venda(int idCliente, double valortotal)
         {
             this.idCliente = idCliente;
             this.valorTotal = valortotal;
         }
-
-
+        public Venda(double valorUnidade, int qntd)
+        {
+            this.valorUnidade = valorUnidade;
+            this.qntd=qntd;
+           
+            
+        }
 
         public void gravarVenda()
         {
@@ -103,6 +109,14 @@ namespace Form_Bd
             {
                 banco.fecharConexao();
             }
+        }
+
+        public double SomarValor(double valor_unitario, int qtnd)
+        {
+            double valor_Total = valor_unitario * qtnd;
+            
+            return valor_Total;
+
         }
     }
 }
