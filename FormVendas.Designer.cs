@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tb_Controle = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.numeric_qntd = new System.Windows.Forms.NumericUpDown();
+            this.btn_atualizar_valores = new System.Windows.Forms.Button();
             this.btn_confirmar = new System.Windows.Forms.Button();
             this.lbl_nome_cliente_venda = new System.Windows.Forms.Label();
             this.tbx_nome_cliente_venda = new System.Windows.Forms.TextBox();
@@ -42,11 +44,9 @@
             this.lbl_valor_total = new System.Windows.Forms.Label();
             this.lbl_id_produto_venda = new System.Windows.Forms.Label();
             this.tbx_valor_total = new System.Windows.Forms.TextBox();
-            this.tbx_quantidade_venda = new System.Windows.Forms.TextBox();
             this.tbx_id_produto_venda = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
-            this.btn_voltar = new System.Windows.Forms.Button();
             this.lbl_cidade = new System.Windows.Forms.Label();
             this.lbl_endereco = new System.Windows.Forms.Label();
             this.tbx_cidade = new System.Windows.Forms.TextBox();
@@ -73,15 +73,13 @@
             this.tbx_telefone = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_atualizar_produto = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_produto_confirmar = new System.Windows.Forms.Button();
             this.lbl_cod_ean = new System.Windows.Forms.Label();
             this.lbl_nome_produto = new System.Windows.Forms.Label();
             this.lbl_qtd_estoque = new System.Windows.Forms.Label();
             this.lbl_valor_unidade = new System.Windows.Forms.Label();
-            this.lbl_id_produto = new System.Windows.Forms.Label();
-            this.tbx_id_produto = new System.Windows.Forms.TextBox();
             this.tbx_cod_produto = new System.Windows.Forms.TextBox();
             this.tbx_quantidade_produto = new System.Windows.Forms.TextBox();
             this.tbx_nome_produto = new System.Windows.Forms.TextBox();
@@ -99,10 +97,9 @@
             this.clientesTableAdapter2 = new Form_Bd.GestaoVenda_dbDataSet5TableAdapters.ClientesTableAdapter();
             this.clientesTableAdapter = new Form_Bd.GestaoVenda_dbDataSet6TableAdapters.ClientesTableAdapter();
             this.produtosTableAdapter = new Form_Bd.GestaoVenda_dbDataSet7TableAdapters.ProdutosTableAdapter();
-            this.btn_atualizar_valores = new System.Windows.Forms.Button();
-            this.btn_atualizar_produto = new System.Windows.Forms.Button();
             this.tb_Controle.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_qntd)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrid_cliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
@@ -127,6 +124,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.numeric_qntd);
             this.tabPage1.Controls.Add(this.btn_atualizar_valores);
             this.tabPage1.Controls.Add(this.btn_confirmar);
             this.tabPage1.Controls.Add(this.lbl_nome_cliente_venda);
@@ -139,7 +137,6 @@
             this.tabPage1.Controls.Add(this.lbl_valor_total);
             this.tabPage1.Controls.Add(this.lbl_id_produto_venda);
             this.tabPage1.Controls.Add(this.tbx_valor_total);
-            this.tabPage1.Controls.Add(this.tbx_quantidade_venda);
             this.tabPage1.Controls.Add(this.tbx_id_produto_venda);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -149,6 +146,28 @@
             this.tabPage1.Text = "Vendas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // numeric_qntd
+            // 
+            this.numeric_qntd.Location = new System.Drawing.Point(393, 62);
+            this.numeric_qntd.Name = "numeric_qntd";
+            this.numeric_qntd.Size = new System.Drawing.Size(100, 20);
+            this.numeric_qntd.TabIndex = 41;
+            this.numeric_qntd.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btn_atualizar_valores
+            // 
+            this.btn_atualizar_valores.Location = new System.Drawing.Point(503, 6);
+            this.btn_atualizar_valores.Name = "btn_atualizar_valores";
+            this.btn_atualizar_valores.Size = new System.Drawing.Size(67, 27);
+            this.btn_atualizar_valores.TabIndex = 40;
+            this.btn_atualizar_valores.Text = "Atualizar ";
+            this.btn_atualizar_valores.UseVisualStyleBackColor = true;
+            this.btn_atualizar_valores.Click += new System.EventHandler(this.btn_atualizar_valores_Click_1);
+            // 
             // btn_confirmar
             // 
             this.btn_confirmar.Location = new System.Drawing.Point(215, 196);
@@ -157,7 +176,7 @@
             this.btn_confirmar.TabIndex = 39;
             this.btn_confirmar.Text = "Confirmar";
             this.btn_confirmar.UseVisualStyleBackColor = true;
-            this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click_1);
+            this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click_2);
             // 
             // lbl_nome_cliente_venda
             // 
@@ -241,13 +260,6 @@
             this.tbx_valor_total.Size = new System.Drawing.Size(100, 20);
             this.tbx_valor_total.TabIndex = 29;
             // 
-            // tbx_quantidade_venda
-            // 
-            this.tbx_quantidade_venda.Location = new System.Drawing.Point(393, 62);
-            this.tbx_quantidade_venda.Name = "tbx_quantidade_venda";
-            this.tbx_quantidade_venda.Size = new System.Drawing.Size(100, 20);
-            this.tbx_quantidade_venda.TabIndex = 28;
-            // 
             // tbx_id_produto_venda
             // 
             this.tbx_id_produto_venda.Location = new System.Drawing.Point(83, 62);
@@ -258,7 +270,6 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.btn_voltar);
             this.tabPage2.Controls.Add(this.lbl_cidade);
             this.tabPage2.Controls.Add(this.lbl_endereco);
             this.tabPage2.Controls.Add(this.tbx_cidade);
@@ -285,23 +296,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(260, 202);
+            this.button3.Location = new System.Drawing.Point(347, 224);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 41);
             this.button3.TabIndex = 36;
             this.button3.Text = "Preencher Venda";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btn_voltar
-            // 
-            this.btn_voltar.Location = new System.Drawing.Point(432, 202);
-            this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(138, 42);
-            this.btn_voltar.TabIndex = 35;
-            this.btn_voltar.Text = "Voltar";
-            this.btn_voltar.UseVisualStyleBackColor = true;
-            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // lbl_cidade
             // 
@@ -374,8 +375,9 @@
             this.cidadeDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn});
             this.dtgrid_cliente.DataSource = this.clientesBindingSource;
-            this.dtgrid_cliente.Location = new System.Drawing.Point(221, 1);
+            this.dtgrid_cliente.Location = new System.Drawing.Point(218, 1);
             this.dtgrid_cliente.Name = "dtgrid_cliente";
+            this.dtgrid_cliente.ReadOnly = true;
             this.dtgrid_cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgrid_cliente.Size = new System.Drawing.Size(355, 195);
             this.dtgrid_cliente.TabIndex = 27;
@@ -392,36 +394,42 @@
             this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
             this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cpfDataGridViewTextBoxColumn
             // 
             this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
             this.cpfDataGridViewTextBoxColumn.HeaderText = "cpf";
             this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
+            this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefoneDataGridViewTextBoxColumn
             // 
             this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "telefone";
             this.telefoneDataGridViewTextBoxColumn.HeaderText = "telefone";
             this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // enderecoDataGridViewTextBoxColumn
             // 
             this.enderecoDataGridViewTextBoxColumn.DataPropertyName = "endereco";
             this.enderecoDataGridViewTextBoxColumn.HeaderText = "endereco";
             this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
+            this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cidadeDataGridViewTextBoxColumn
             // 
             this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "cidade";
             this.cidadeDataGridViewTextBoxColumn.HeaderText = "cidade";
             this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
+            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // clientesBindingSource
             // 
@@ -518,15 +526,12 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btn_atualizar_produto);
-            this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.btn_produto_confirmar);
             this.tabPage3.Controls.Add(this.lbl_cod_ean);
             this.tabPage3.Controls.Add(this.lbl_nome_produto);
             this.tabPage3.Controls.Add(this.lbl_qtd_estoque);
             this.tabPage3.Controls.Add(this.lbl_valor_unidade);
-            this.tabPage3.Controls.Add(this.lbl_id_produto);
-            this.tabPage3.Controls.Add(this.tbx_id_produto);
             this.tabPage3.Controls.Add(this.tbx_cod_produto);
             this.tabPage3.Controls.Add(this.tbx_quantidade_produto);
             this.tabPage3.Controls.Add(this.tbx_nome_produto);
@@ -541,14 +546,15 @@
             this.tabPage3.Text = "Produtos";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_atualizar_produto
             // 
-            this.button2.Location = new System.Drawing.Point(454, 196);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 36);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Voltar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_atualizar_produto.Location = new System.Drawing.Point(354, 212);
+            this.btn_atualizar_produto.Name = "btn_atualizar_produto";
+            this.btn_atualizar_produto.Size = new System.Drawing.Size(103, 41);
+            this.btn_atualizar_produto.TabIndex = 42;
+            this.btn_atualizar_produto.Text = "Preencher Venda";
+            this.btn_atualizar_produto.UseVisualStyleBackColor = true;
+            this.btn_atualizar_produto.Click += new System.EventHandler(this.btn_atualizar_produto_Click_1);
             // 
             // label2
             // 
@@ -563,7 +569,7 @@
             // 
             // btn_produto_confirmar
             // 
-            this.btn_produto_confirmar.Location = new System.Drawing.Point(16, 226);
+            this.btn_produto_confirmar.Location = new System.Drawing.Point(16, 212);
             this.btn_produto_confirmar.Name = "btn_produto_confirmar";
             this.btn_produto_confirmar.Size = new System.Drawing.Size(194, 27);
             this.btn_produto_confirmar.TabIndex = 38;
@@ -575,7 +581,7 @@
             // 
             this.lbl_cod_ean.AutoSize = true;
             this.lbl_cod_ean.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lbl_cod_ean.Location = new System.Drawing.Point(32, 88);
+            this.lbl_cod_ean.Location = new System.Drawing.Point(30, 64);
             this.lbl_cod_ean.Name = "lbl_cod_ean";
             this.lbl_cod_ean.Size = new System.Drawing.Size(83, 13);
             this.lbl_cod_ean.TabIndex = 37;
@@ -585,7 +591,7 @@
             // 
             this.lbl_nome_produto.AutoSize = true;
             this.lbl_nome_produto.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lbl_nome_produto.Location = new System.Drawing.Point(32, 120);
+            this.lbl_nome_produto.Location = new System.Drawing.Point(30, 96);
             this.lbl_nome_produto.Name = "lbl_nome_produto";
             this.lbl_nome_produto.Size = new System.Drawing.Size(78, 13);
             this.lbl_nome_produto.TabIndex = 36;
@@ -595,7 +601,7 @@
             // 
             this.lbl_qtd_estoque.AutoSize = true;
             this.lbl_qtd_estoque.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lbl_qtd_estoque.Location = new System.Drawing.Point(32, 148);
+            this.lbl_qtd_estoque.Location = new System.Drawing.Point(30, 124);
             this.lbl_qtd_estoque.Name = "lbl_qtd_estoque";
             this.lbl_qtd_estoque.Size = new System.Drawing.Size(65, 13);
             this.lbl_qtd_estoque.TabIndex = 35;
@@ -605,53 +611,36 @@
             // 
             this.lbl_valor_unidade.AutoSize = true;
             this.lbl_valor_unidade.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lbl_valor_unidade.Location = new System.Drawing.Point(32, 177);
+            this.lbl_valor_unidade.Location = new System.Drawing.Point(30, 153);
             this.lbl_valor_unidade.Name = "lbl_valor_unidade";
             this.lbl_valor_unidade.Size = new System.Drawing.Size(70, 13);
             this.lbl_valor_unidade.TabIndex = 34;
             this.lbl_valor_unidade.Text = "Valor Unitário";
             // 
-            // lbl_id_produto
-            // 
-            this.lbl_id_produto.AutoSize = true;
-            this.lbl_id_produto.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lbl_id_produto.Location = new System.Drawing.Point(32, 58);
-            this.lbl_id_produto.Name = "lbl_id_produto";
-            this.lbl_id_produto.Size = new System.Drawing.Size(21, 13);
-            this.lbl_id_produto.TabIndex = 33;
-            this.lbl_id_produto.Text = "ID:";
-            // 
-            // tbx_id_produto
-            // 
-            this.tbx_id_produto.Location = new System.Drawing.Point(120, 55);
-            this.tbx_id_produto.Name = "tbx_id_produto";
-            this.tbx_id_produto.Size = new System.Drawing.Size(51, 20);
-            this.tbx_id_produto.TabIndex = 32;
-            // 
             // tbx_cod_produto
             // 
-            this.tbx_cod_produto.Location = new System.Drawing.Point(120, 85);
+            this.tbx_cod_produto.Location = new System.Drawing.Point(118, 61);
             this.tbx_cod_produto.Name = "tbx_cod_produto";
             this.tbx_cod_produto.Size = new System.Drawing.Size(83, 20);
             this.tbx_cod_produto.TabIndex = 31;
             // 
             // tbx_quantidade_produto
             // 
-            this.tbx_quantidade_produto.Location = new System.Drawing.Point(120, 148);
+            this.tbx_quantidade_produto.Location = new System.Drawing.Point(118, 124);
             this.tbx_quantidade_produto.Name = "tbx_quantidade_produto";
             this.tbx_quantidade_produto.Size = new System.Drawing.Size(83, 20);
             this.tbx_quantidade_produto.TabIndex = 30;
             // 
             // tbx_nome_produto
             // 
-            this.tbx_nome_produto.Location = new System.Drawing.Point(120, 117);
+            this.tbx_nome_produto.Location = new System.Drawing.Point(118, 93);
             this.tbx_nome_produto.Name = "tbx_nome_produto";
             this.tbx_nome_produto.Size = new System.Drawing.Size(83, 20);
             this.tbx_nome_produto.TabIndex = 29;
             // 
             // tbx_valor_unitario
             // 
-            this.tbx_valor_unitario.Location = new System.Drawing.Point(120, 174);
+            this.tbx_valor_unitario.Location = new System.Drawing.Point(118, 150);
             this.tbx_valor_unitario.Name = "tbx_valor_unitario";
             this.tbx_valor_unitario.Size = new System.Drawing.Size(83, 20);
             this.tbx_valor_unitario.TabIndex = 28;
@@ -680,6 +669,7 @@
             this.dtgrid_produto.DataSource = this.produtosBindingSource;
             this.dtgrid_produto.Location = new System.Drawing.Point(244, 3);
             this.dtgrid_produto.Name = "dtgrid_produto";
+            this.dtgrid_produto.ReadOnly = true;
             this.dtgrid_produto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgrid_produto.Size = new System.Drawing.Size(321, 187);
             this.dtgrid_produto.TabIndex = 27;
@@ -696,24 +686,28 @@
             this.codEANDataGridViewTextBoxColumn.DataPropertyName = "codEAN";
             this.codEANDataGridViewTextBoxColumn.HeaderText = "codEAN";
             this.codEANDataGridViewTextBoxColumn.Name = "codEANDataGridViewTextBoxColumn";
+            this.codEANDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nomeProdutoDataGridViewTextBoxColumn
             // 
             this.nomeProdutoDataGridViewTextBoxColumn.DataPropertyName = "nomeProduto";
             this.nomeProdutoDataGridViewTextBoxColumn.HeaderText = "nomeProduto";
             this.nomeProdutoDataGridViewTextBoxColumn.Name = "nomeProdutoDataGridViewTextBoxColumn";
+            this.nomeProdutoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // estoqueDataGridViewTextBoxColumn
             // 
             this.estoqueDataGridViewTextBoxColumn.DataPropertyName = "estoque";
             this.estoqueDataGridViewTextBoxColumn.HeaderText = "estoque";
             this.estoqueDataGridViewTextBoxColumn.Name = "estoqueDataGridViewTextBoxColumn";
+            this.estoqueDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // valorProdutoDataGridViewTextBoxColumn
             // 
             this.valorProdutoDataGridViewTextBoxColumn.DataPropertyName = "valorProduto";
             this.valorProdutoDataGridViewTextBoxColumn.HeaderText = "valorProduto";
             this.valorProdutoDataGridViewTextBoxColumn.Name = "valorProdutoDataGridViewTextBoxColumn";
+            this.valorProdutoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // produtosBindingSource
             // 
@@ -737,26 +731,6 @@
             // 
             this.produtosTableAdapter.ClearBeforeFill = true;
             // 
-            // btn_atualizar_valores
-            // 
-            this.btn_atualizar_valores.Location = new System.Drawing.Point(503, 6);
-            this.btn_atualizar_valores.Name = "btn_atualizar_valores";
-            this.btn_atualizar_valores.Size = new System.Drawing.Size(67, 27);
-            this.btn_atualizar_valores.TabIndex = 40;
-            this.btn_atualizar_valores.Text = "Atualizar ";
-            this.btn_atualizar_valores.UseVisualStyleBackColor = true;
-            this.btn_atualizar_valores.Click += new System.EventHandler(this.btn_atualizar_valores_Click);
-            // 
-            // btn_atualizar_produto
-            // 
-            this.btn_atualizar_produto.Location = new System.Drawing.Point(297, 194);
-            this.btn_atualizar_produto.Name = "btn_atualizar_produto";
-            this.btn_atualizar_produto.Size = new System.Drawing.Size(103, 41);
-            this.btn_atualizar_produto.TabIndex = 42;
-            this.btn_atualizar_produto.Text = "Preencher Venda";
-            this.btn_atualizar_produto.UseVisualStyleBackColor = true;
-            this.btn_atualizar_produto.Click += new System.EventHandler(this.btn_atualizar_produto_Click);
-            // 
             // FormVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -769,6 +743,7 @@
             this.tb_Controle.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_qntd)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrid_cliente)).EndInit();
@@ -799,10 +774,8 @@
         private System.Windows.Forms.Label lbl_valor_total;
         private System.Windows.Forms.Label lbl_id_produto_venda;
         private System.Windows.Forms.TextBox tbx_valor_total;
-        private System.Windows.Forms.TextBox tbx_quantidade_venda;
         private System.Windows.Forms.TextBox tbx_id_produto_venda;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btn_voltar;
         private System.Windows.Forms.Label lbl_cidade;
         private System.Windows.Forms.Label lbl_endereco;
         private System.Windows.Forms.TextBox tbx_cidade;
@@ -820,15 +793,12 @@
         private System.Windows.Forms.TextBox tbx_telefone;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_produto_confirmar;
         private System.Windows.Forms.Label lbl_cod_ean;
         private System.Windows.Forms.Label lbl_nome_produto;
         private System.Windows.Forms.Label lbl_qtd_estoque;
         private System.Windows.Forms.Label lbl_valor_unidade;
-        private System.Windows.Forms.Label lbl_id_produto;
-        private System.Windows.Forms.TextBox tbx_id_produto;
         private System.Windows.Forms.TextBox tbx_cod_produto;
         private System.Windows.Forms.TextBox tbx_quantidade_produto;
         private System.Windows.Forms.TextBox tbx_nome_produto;
@@ -855,9 +825,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeProdutoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estoqueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorProdutoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_atualizar_valores;
         private System.Windows.Forms.Button btn_atualizar_produto;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.NumericUpDown numeric_qntd;
     }
 }
 

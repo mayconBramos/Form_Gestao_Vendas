@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
 using System.Windows;
 
 namespace Form_Bd
@@ -118,5 +120,6 @@ namespace Form_Bd
             return valor_Total;
 
         }
+
     }
 }
